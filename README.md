@@ -37,4 +37,5 @@ $ pnpm run doctor
 
 ## LICENSE
 
+1
 MIT
