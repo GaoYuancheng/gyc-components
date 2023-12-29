@@ -5,7 +5,7 @@ const { NODE_ENV } = process.env;
 //production
 export default defineConfig({
   outputPath: 'docs-dist',
-  publicPath: NODE_ENV === 'development' ? '/' : '/gyc-components',
+  publicPath: NODE_ENV === 'development' ? '/' : '/gyc-components/',
   resolve: {
     atomDirs: [
       { type: 'component', dir: 'src/components' },
