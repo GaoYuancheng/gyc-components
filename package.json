@@ -43,6 +43,9 @@
       "prettier --parser=typescript --write"
     ]
   },
+  "dependencies": {
+    "classnames": "^2.5.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
@@ -57,7 +60,7 @@
     "prettier": "^2.7.1",
     "prettier-plugin-organize-imports": "^3.0.0",
     "prettier-plugin-packagejson": "^2.2.18",
-    "react": "^18.0.0",
+    "react": "^18.2.0",
     "react-dom": "^18.0.0",
     "stylelint": "^14.9.1"
   },

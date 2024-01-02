@@ -1,5 +1,6 @@
 // components
 export { default as Foo } from './components/Foo';
+export { default as GModal } from './components/GModal';
 export { default as GSelect } from './components/GSelect';
 
 // hooks & tools

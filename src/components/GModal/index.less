@@ -1,0 +1,36 @@
+.gModal {
+  background: #1b1e25;
+  position: absolute;
+  inset: auto;
+  z-index: 99;
+  // transition: all 0.7s;
+  .gModalContent {
+    transform-origin: 0 0;
+  }
+
+  .header {
+    display: flex;
+    padding: 16px;
+    justify-content: space-between;
+
+    .title {
+      color: rgba(255, 255, 255, 85%);
+      font-size: 16px;
+    }
+
+    .closeIcon {
+      cursor: pointer;
+
+      .closeImg {
+        width: 12px;
+        height: 12px;
+        color: #fff;
+      }
+    }
+  }
+
+  .content {
+    // padding: 16px;
+    color: rgba(255, 255, 255, 85%);
+  }
+}
