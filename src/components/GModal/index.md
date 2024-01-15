@@ -1,5 +1,7 @@
 ---
 title: GModal # 组件的标题，会在菜单侧边栏展示
+demo:
+  cols: 2
 toc: content # 在页面右侧展示锚点链接
 # group: # 分组
 #   title: 高级组件 # 所在分组的名称
@@ -11,6 +13,8 @@ toc: content # 在页面右侧展示锚点链接
 使用 React.createPortal 创建弹窗 并且挂载到指定的节点
 
 <code src="./demo/base/index" description="基础使用">基础用法</code>
+<code src="./demo/customPosition/index" description="自定义top,left">自定义 top,left</code>
+<code src="./demo/maskClosable/index" description="使用 ClickWrap 组件实现点击弹窗外区域关闭">点击弹窗外区域关闭</code>
 
 ## API
 

@@ -15,6 +15,7 @@ const GModalBase: React.FC = () => {
         open GModal
       </Button>
       <GModal
+        style={{ top: 100, left: 100 }}
         title="GModal"
         open={open}
         onClose={() => {

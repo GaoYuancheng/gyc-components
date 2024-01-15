@@ -9,8 +9,12 @@ import React, {
 import ReactDom from 'react-dom';
 import './index.less';
 
+type OnClose = (
+  e?: Parameters<React.MouseEventHandler<HTMLDivElement>>,
+) => void;
+
 export interface CustomBimGisModalProps {
-  onClose?: React.MouseEventHandler<HTMLImageElement>;
+  onClose?: OnClose;
   open?: boolean;
   title?: string;
   header?: boolean;
@@ -40,6 +44,8 @@ const GModal: React.FC<PropsWithChildren<CustomBimGisModalProps>> = ({
 
   const height = style?.height || 400;
   const width = style?.width || 520;
+  const top = style?.top || (window.innerHeight - (height as number)) / 2;
+  const left = style?.left || (window.innerWidth - (width as number)) / 2;
 
   const modalDom: any = (
     <div
@@ -58,7 +64,7 @@ const GModal: React.FC<PropsWithChildren<CustomBimGisModalProps>> = ({
           <div className="header">
             <div className="title">{title}</div>
             <div className="closeIcon">
-              <div className="closeImg" onClick={onClose}>
+              <div className="closeImg" onClick={onClose as any}>
                 x
               </div>
             </div>
@@ -73,16 +79,12 @@ const GModal: React.FC<PropsWithChildren<CustomBimGisModalProps>> = ({
   useEffect(() => {
     if (open) {
       setContentStyle({
-        top: (window.innerHeight - (height as number)) / 2,
-        left: (window.innerWidth - (width as number)) / 2,
+        top,
+        left,
       });
       setIsOpened(true);
     } else {
       afterClose?.();
-      // setContentStyle({
-      //   top: 0,
-      //   left: (window.innerWidth - width) / 20,
-      // });
     }
   }, [open]);
 
@@ -90,12 +92,14 @@ const GModal: React.FC<PropsWithChildren<CustomBimGisModalProps>> = ({
     return null;
   }
 
+  const resDom = modalDom;
+
   if (destroyOnClose) {
     if (open) {
       return (
         <div ref={domRef}>
           {ReactDom.createPortal(
-            modalDom,
+            resDom,
             targetNode
               ? targetNode(domRef.current as HTMLElement)
               : document.body,
@@ -109,7 +113,7 @@ const GModal: React.FC<PropsWithChildren<CustomBimGisModalProps>> = ({
   return (
     <div ref={domRef}>
       {ReactDom.createPortal(
-        modalDom,
+        resDom,
         targetNode ? targetNode(domRef.current as HTMLElement) : document.body,
       )}
     </div>
