@@ -3,10 +3,12 @@
   "version": "0.0.1",
   "description": "A react library developed with dumi",
   "license": "MIT",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "module": "esm/index.js",
+  "types": "esm/index.d.ts",
   "files": [
-    "dist"
+    "esm",
+    "lib",
+    "umd"
   ],
   "scripts": {
     "build": "father build",
@@ -65,7 +67,7 @@
     "stylelint": "^14.9.1"
   },
   "peerDependencies": {
-    "antd": ">=5.4.2",
+    "antd": "^4.0.0",
     "react": ">=16.9.0",
     "react-dom": ">=16.9.0"
   },
@@ -74,5 +76,6 @@
   },
   "authors": [
     "gyc"
-  ]
+  ],
+  "slideEffects": false
 }
