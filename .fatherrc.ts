@@ -7,7 +7,6 @@ export default defineConfig({
     ignores: [
       'src/**/demo/**', // 避免打包demo文件到npm包里面
     ],
-    // transformer: 'babel',
   },
   cjs: {
     output: 'lib',
@@ -15,7 +14,11 @@ export default defineConfig({
       'src/**/demo/**', // 避免打包demo文件到npm包里面
     ],
   },
-  umd: {
-    output: 'umd',
-  },
+  // umd: {
+  //   output: 'umd',
+  // externals: {
+  //   react: 'react',
+  //   antd: 'antd',
+  // },
+  // },
 });

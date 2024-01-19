@@ -4,13 +4,16 @@
     "declaration": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "outDir": "dist",
     "jsx": "react",
     "baseUrl": "./",
+    "emitDeclarationOnly": true,
     "paths": {
       "@@/*": [".dumi/tmp/*"],
       "gyc-components": ["src"],
       "gyc-components/*": ["src/*", "*"]
     }
   },
-  "include": [".dumirc.ts", "src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["src/**/**/demo/*"]
 }

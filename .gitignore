@@ -10,3 +10,4 @@ docs-dist
 esm
 lib
 umd
+rollupDist
