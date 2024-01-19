@@ -8,6 +8,7 @@ module.exports = {
   proseWrap: 'never',
   singleQuote: true,
   trailingComma: 'all',
+  // 防止格式化去除掉不用的import
   organizeImportsSkipDestructiveCodeActions: true,
   overrides: [
     {
