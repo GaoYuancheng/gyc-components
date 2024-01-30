@@ -8,12 +8,15 @@ export default defineConfig({
       'src/**/demo/**', // 避免打包demo文件到npm包里面
     ],
   },
-  cjs: {
-    output: 'lib',
-    ignores: [
-      'src/**/demo/**', // 避免打包demo文件到npm包里面
-    ],
-  },
+  // gycOptions: {
+  //   as: 's',
+  // },
+  // cjs: {
+  //   output: 'lib',
+  //   ignores: [
+  //     'src/**/demo/**', // 避免打包demo文件到npm包里面
+  //   ],
+  // },
   // umd: {
   //   output: 'umd',
   // externals: {
