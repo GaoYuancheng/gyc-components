@@ -1,5 +1,6 @@
 // components
 export { default as ClickWrap } from './components/ClickWrap';
+export { default as ColorPicker } from './components/ColorPicker';
 export { default as Foo } from './components/Foo';
 export { default as GModal } from './components/GModal';
 export { default as GSelect } from './components/GSelect';
