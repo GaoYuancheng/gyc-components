@@ -18,6 +18,7 @@ module.exports = {
   // input: ['./src/index.ts', './src/components/GSelect/index.tsx'],
   input: {
     // TODO: 使用脚本确定 input
+    'index.js': 'src/index.ts',
     'components/GSelect/index.js': 'src/components/GSelect/index.tsx',
     'components/ClickWrap/index.js': 'src/components/ClickWrap/index.tsx',
   },
@@ -25,7 +26,7 @@ module.exports = {
     entryFileNames: '[name]',
     dir: outDir,
     format: 'esm',
-    sourcemap: true,
+    // sourcemap: true,
     // preserveModules: true, // 分离打包 每个组件一个js
     // preserveModulesRoot: './src',
     // manualChunks: {
@@ -42,6 +43,7 @@ module.exports = {
       compilerOptions: {
         outDir,
       },
+      tsconfig: './tsconfig.build.json',
       include: ['src/**/*'],
     }),
     babel({

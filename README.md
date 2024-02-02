@@ -17,30 +17,16 @@ TODO
 ## Development
 
 ```bash
-# install dependencies
-$ pnpm install
-
-# develop library by docs demo
-$ pnpm start
-
-# build library source code
-$ pnpm run build
-
-# build library source code in watch mode
-$ pnpm run build:watch
-
-# build docs
-$ pnpm run docs:build
-
-# check your project for potential problems
-$ pnpm run doctor
+pnpm i
+pnpm dev
 ```
+
+本项目已接入 github actions 和 github pages
+push 到 main 分支时会自动触发构建
 
 ## TODO
 
 [ x ] github action && github pages
-
-[ ] antd5 降级成 antd4
 
 - 在.dumi/global.less 中手动引用样式
 

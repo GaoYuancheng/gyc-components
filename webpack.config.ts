@@ -3,7 +3,6 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 import { Configuration } from 'webpack';
 import WebpackBar from 'webpackbar';
-import pkg from './package.json';
 
 module.exports = {
   mode: 'production',

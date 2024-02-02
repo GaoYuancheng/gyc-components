@@ -1,7 +1,14 @@
 {
   "name": "gyc-components",
   "version": "0.0.1",
-  "description": "A react library developed with dumi",
+  "description": "自定义dumi组件库",
+  "keywords": [
+    "components",
+    "gyc"
+  ],
+  "homepage": "https://gaoyuancheng.github.io/gyc-components",
+  "bugs": "https://github.com/GaoYuancheng/gyc-components/issues",
+  "repository": "https://github.com/GaoYuancheng/gyc-components.git",
   "license": "MIT",
   "module": "esm/index.js",
   "types": "esm/index.d.ts",
@@ -12,7 +19,7 @@
     "build": "father build",
     "build:rollup": "rollup -c rollup.config.js",
     "build:watch": "father dev",
-    "build:webpack": "webpack -c webpack.config.ts && tsc",
+    "build:webpack": "webpack -c webpack.config.ts && tsc --project tsconfig.build.json",
     "dev": "dumi dev",
     "docs:build": "dumi build",
     "doctor": "father doctor",
