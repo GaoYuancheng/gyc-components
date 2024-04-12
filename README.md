@@ -30,10 +30,12 @@ push 到 main 分支时会自动触发构建
 
 - 在.dumi/global.less 中手动引用样式
 
-[ ] 基于 antd4 的 colorPicker 组件
+[ x ] 基于 antd4 的 colorPicker 组件
 
 [ ] publicPath 调整 目前点击到组件会直接到 /components 需要调整为 /gyc-components/components
 
 [ ] 部署上去 首页展示不出
 
 [ ] dumi 无法把 less 打包到 js 中 导致外部项目必须要装 less 后续考虑换成别的打包工具 dumi 只做组件库的文档展示
+
+[ ] 还未发布 所以暂时不改 version
