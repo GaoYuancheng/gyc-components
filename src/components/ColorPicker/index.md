@@ -8,8 +8,10 @@ toc: content # 在页面右侧展示锚点链接
 
 # ColorPicker
 
-This is an example component.
+颜色选择组件。
 
-<code src="./demo/base.tsx" description="demo 描述">基础用法</code>
+<code src="./demo/base.tsx" description="基础用法">基础用法</code>
+
+<code src="./demo/controlled.tsx" description="受控用法">受控用法</code>
 
 ## API

@@ -1,5 +1,5 @@
 import { Select } from 'antd';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './index.less';
 
 export interface ColorPickerProps {
@@ -15,13 +15,32 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
   defaultValue,
   disabled,
 }) => {
+  const inputRef = useRef<any>();
+
+  const setInputValue = (value?: string) => {
+    inputRef.current.value = value;
+  };
+
   useEffect(() => {
-    onChange?.(value);
+    setInputValue(value);
   }, [value]);
+
+  useEffect(() => {
+    if (defaultValue && !value) {
+      setInputValue(defaultValue);
+    }
+  }, [defaultValue]);
 
   return (
     <div>
-      <input type="color" disabled={disabled} defaultValue={defaultValue} />
+      <input
+        ref={inputRef}
+        type="color"
+        onChange={(e) => {
+          onChange?.(e.target.value);
+        }}
+        disabled={disabled}
+      />
     </div>
   );
 };
