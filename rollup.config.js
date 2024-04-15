@@ -4,23 +4,30 @@
 // (!) Plugin typescript: @rollup/plugin-typescript TS2354: This syntax requires an imported helper but module 'tslib' cannot be found.
 //https://juejin.cn/post/7136104350912348174#heading-0
 
-const resolve = require('@rollup/plugin-node-resolve');
-const postcss = require('rollup-plugin-postcss');
-const typescript = require('@rollup/plugin-typescript');
-const commonjs = require('@rollup/plugin-commonjs');
-const { babel } = require('@rollup/plugin-babel');
-const clear = require('rollup-plugin-clear');
+import { babel } from '@rollup/plugin-babel';
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import typescript from '@rollup/plugin-typescript';
+import { defineConfig } from 'rollup';
+import clear from 'rollup-plugin-clear';
+import copy from 'rollup-plugin-copy';
+import postcss from 'rollup-plugin-postcss';
+import getComponentsInput from './scripts/getComponents';
 
 const outDir = 'rollupDist';
+const componentInput = getComponentsInput('./src/components');
+const hooksInput = getComponentsInput('./src/hooks');
 
-/**@type {import('rollup').RollupOptions} */
-module.exports = {
+export default defineConfig({
   // input: ['./src/index.ts', './src/components/GSelect/index.tsx'],
   input: {
-    // TODO: 使用脚本确定 input
+    ...componentInput,
+    ...hooksInput,
     'index.js': 'src/index.ts',
-    'components/GSelect/index.js': 'src/components/GSelect/index.tsx',
-    'components/ClickWrap/index.js': 'src/components/ClickWrap/index.tsx',
+    // 'index.js': 'src/index.ts',
+
+    // 'components/GSelect/index.js': 'src/components/GSelect/index.tsx',
+    // 'components/ClickWrap/index.js': 'src/components/ClickWrap/index.tsx',
   },
   output: {
     entryFileNames: '[name]',
@@ -35,9 +42,15 @@ module.exports = {
     // },
   },
   plugins: [
-    // TODO: 使用copy插件 复制index
+    // copy({
+    //   targets: [
+    //     { src: 'src/index.ts', dest: `${outDir}` }, // 复制整个目录
+    //   ],
+    // }),
     postcss({
-      use: ['sass', ['less', { javascriptEnabled: true }]],
+      // use: ['sass', ['less', { javascriptEnabled: true }]],
+      extensions: ['less'],
+      // use: ['sass', 'less'],
     }),
     typescript({
       compilerOptions: {
@@ -49,6 +62,7 @@ module.exports = {
     babel({
       presets: ['@babel/preset-env'],
       exclude: /node_module/,
+      babelHelpers: 'bundled',
     }),
     resolve(),
     commonjs(),
@@ -60,6 +74,5 @@ module.exports = {
       targets: [outDir],
     }),
   ],
-  context: '',
   external: ['react', 'react-dom', 'antd'],
-};
+});

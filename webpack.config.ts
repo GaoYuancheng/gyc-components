@@ -4,6 +4,7 @@ import path from 'path';
 import { Configuration } from 'webpack';
 import WebpackBar from 'webpackbar';
 
+// FIXME: 目前打包报错
 module.exports = {
   mode: 'production',
   entry: {
@@ -14,7 +15,7 @@ module.exports = {
   },
   output: {
     clean: true,
-    path: path.resolve('./dist'),
+    path: path.resolve('./webpackDist'),
     // filename: '[name]/index.js',
     filename: '[name]/index.js',
     // filename: (pathData) => {

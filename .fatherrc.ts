@@ -5,13 +5,14 @@ export default defineConfig({
   esm: {
     output: 'esm',
     ignores: [
-      'src/**/demo/**', // 避免打包demo文件到npm包里面
+      'src/**/demo/**', // 避免打包 demo 文件到npm包里面
+      'src/utils/**', // 避免打包 utils 文件到npm包里面
     ],
   },
   // cjs: {
   //   output: 'lib',
   //   ignores: [
-  //     'src/**/demo/**', // 避免打包demo文件到npm包里面
+  //     'src/**/demo/**', // 避免打包 demo 文件到npm包里面
   //   ],
   // },
   // umd: {
