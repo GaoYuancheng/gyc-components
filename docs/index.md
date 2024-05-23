@@ -3,7 +3,7 @@ hero:
   title: library
   description: A react library developed with dumi
   actions:
-    - text: Hello
+    - text: Hello11
       link: /
     - text: World
       link: /

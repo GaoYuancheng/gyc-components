@@ -4,7 +4,7 @@ group:
   order: 1
 ---
 
-# tools
+# tool1
 
 This is an example component.
 

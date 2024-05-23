@@ -3,9 +3,13 @@ import { defineConfig } from 'dumi';
 const { NODE_ENV } = process.env;
 //development
 //production
+
+const pathPrefix = NODE_ENV === 'production' ? '/gyc-components/' : '/';
+// const pathPrefix = '/gyc-components/';
+
 export default defineConfig({
   outputPath: 'docs-dist',
-  publicPath: NODE_ENV === 'development' ? '/' : '/gyc-components/',
+  publicPath: `${pathPrefix}`,
   resolve: {
     atomDirs: [
       { type: 'component', dir: 'src/components' },
