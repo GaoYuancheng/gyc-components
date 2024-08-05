@@ -17,7 +17,7 @@ const FormFieldFormatterBase = () => {
           <Form.Item label="selectInfo" name="selectInfo">
             <FormFieldFormatter
               formatValue={(value) => value?.value}
-              formatOnChange={(value) => value?.[1]}
+              formatOnChange={(value, options) => options}
             >
               <Select
                 onChange={(value, options) =>

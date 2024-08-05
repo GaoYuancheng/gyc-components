@@ -1,10 +1,12 @@
-import React, { PropsWithChildren } from 'react';
+import React, { Children, PropsWithChildren } from 'react';
 
 interface Props {
   onChange?: (value: Props['value']) => void;
   value?: any;
+  /** 回显时 调整展示的 value */
   formatValue?: (value: Props['value']) => any;
-  formatOnChange?: (values: any[]) => any;
+  /** 在 onChange 中处理抛出的value 参数与 children.props.onChange 一致 */
+  formatOnChange?: (...arg: any) => Props['value'];
 }
 
 const FormFieldFormatter: React.FC<PropsWithChildren<Props>> = ({
@@ -21,7 +23,7 @@ const FormFieldFormatter: React.FC<PropsWithChildren<Props>> = ({
     onChange: (...rest: any) => {
       let value = rest[0];
       if (formatOnChange) {
-        value = formatOnChange(rest);
+        value = formatOnChange(...rest);
       }
       (children as any).props.onChange?.(...rest);
       onChange?.(value);
