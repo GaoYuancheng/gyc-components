@@ -26,6 +26,9 @@ dependencies:
   '@rollup/plugin-node-resolve':
     specifier: ^15.2.3
     version: 15.2.3(rollup@4.9.5)
+  '@types/lodash':
+    specifier: ^4.17.7
+    version: 4.17.7
   '@types/node':
     specifier: ^20.12.7
     version: 20.12.7
@@ -47,6 +50,9 @@ dependencies:
   less-loader:
     specifier: ^12.0.0
     version: 12.0.0(less@4.2.0)(webpack@5.89.0)
+  lodash:
+    specifier: ^4.17.21
+    version: 4.17.21
   mini-css-extract-plugin:
     specifier: ^2.7.7
     version: 2.7.7(webpack@5.89.0)
@@ -3576,6 +3582,10 @@ packages:
     dependencies:
       '@types/node': 20.12.7
     dev: true
+
+  /@types/lodash@4.17.7:
+    resolution: {integrity: sha512-8wTvZawATi/lsmNu10/j2hk1KEP0IvjubqPE3cu1Xz7xfXXt5oCq3SNUz4fMIP4XGF9Ky+Ue2tBA3hcS7LSBlA==}
+    dev: false
 
   /@types/mdast@3.0.15:
     resolution: {integrity: sha512-LnwD+mUEfxWMa1QpDraczIn6k0Ee3SMicuYSSzS6ZYl2gKS09EClnJYGd8Du6rfc5r/GZEk5o1mRb8TaTj03sQ==}

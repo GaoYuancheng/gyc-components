@@ -10,12 +10,14 @@ toc: content # 在页面右侧展示锚点链接
 
 This is an example component.
 
-```jsx
+<!-- ```jsx
 import { GSelect } from 'gyc-components';
 
 export default () => <GSelect />;
-```
+``` -->
 
-<!-- <code src="./demo/base.tsx" description="demo 描述">基础用法</code> -->
+<code src="./demo/base.tsx" description="demo 描述">基础用法</code>
+
+<code src="./demo/SelectWithScroll.tsx" description="滚动加载更多">滚动加载更多</code>
 
 ## API
