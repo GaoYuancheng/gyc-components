@@ -1,7 +1,9 @@
 import React, { Children, PropsWithChildren } from 'react';
 
 interface Props {
+  // TODO: 实际上是 来判断 children['onChange']
   onChange?: (value: Props['value']) => void;
+  // TODO: 实际上是 来判断 children['value']
   value?: any;
   /** 回显时 调整展示的 value */
   formatValue?: (value: Props['value']) => any;
