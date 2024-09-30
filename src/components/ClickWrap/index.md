@@ -14,4 +14,14 @@ toc: content # 在页面右侧展示锚点链接
 
 <code src="./demo/base.tsx" description="基础用法">基础用法</code>
 
+```jsx
+import React from 'react';
+export default () => (
+  <>
+    <div>也可以通过 判断 e.contains 实现 </div>
+    <div>参考 ahooks 的 useClickAway</div>
+  </>
+);
+```
+
 ## API

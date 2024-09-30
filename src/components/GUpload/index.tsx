@@ -12,11 +12,13 @@ interface FileItem {
 
 export interface GUploadProps extends UploadProps {
   value?: FileItem[];
+  readonly?: boolean;
 }
 
 const GUpload: React.FC<PropsWithChildren<GUploadProps>> = ({
   value,
   onChange,
+  readonly,
   ...rest
 }) => {
   const [fileList, setFileList] = useState<FileItem[]>([]);
@@ -40,14 +42,27 @@ const GUpload: React.FC<PropsWithChildren<GUploadProps>> = ({
       customRequest={(parameters) => {
         console.log(parameters);
       }}
+      disabled={readonly}
+      listType={readonly ? 'text' : 'picture-card'}
+      itemRender={(originNode, file, fileList, actions) => {
+        if (!readonly) {
+          return originNode;
+        }
+        const { download, preview, remove } = actions;
+        return (
+          <div style={{ lineHeight: '30px' }}>
+            <a href={file?.url} download>
+              {file.name}
+            </a>
+          </div>
+        );
+      }}
       accept="image/jpg,image/jpeg,image/png,*.svg"
       fileList={fileList as any}
       onChange={handleOnChange}
       {...rest}
     >
-      <div>
-        <Button icon={<UploadOutlined />}>点击上传</Button>
-      </div>
+      {readonly ? null : '点击上传'}
     </Upload>
   );
 };

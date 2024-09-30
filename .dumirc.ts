@@ -12,9 +12,9 @@ export default defineConfig({
   publicPath: `${pathPrefix}`,
   resolve: {
     atomDirs: [
-      { type: 'component', dir: 'src/components' },
-      { type: 'tool', dir: 'src/tools' },
-      { type: 'hook', dir: 'src/hooks' },
+      { type: 'components', dir: 'src/components' },
+      { type: 'tools', dir: 'src/tools' },
+      { type: 'hooks', dir: 'src/hooks' },
     ],
   },
   themeConfig: {
@@ -23,6 +23,7 @@ export default defineConfig({
       { title: '介绍', link: '/guide' },
       { title: '组件', link: '/components/foo' }, // components会默认自动对应到src文件夹
       { title: 'hooks', link: '/hooks/use-hook1' }, // components会默认自动对应到src文件夹
+      { title: 'tools', link: '/tools/tool1' }, // components会默认自动对应到src文件夹
     ],
   },
   styles: [
