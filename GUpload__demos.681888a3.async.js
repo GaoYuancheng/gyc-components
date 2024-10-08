@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkgyc_components=self.webpackChunkgyc_components||[]).push([[712],{43713:function(_,c,n){n.r(c);var s=n(46481),o=n(50959),a=n(11527),t=function(){return(0,a.jsx)(s.GUpload,{})};c.default=t}}]);
