@@ -8,7 +8,11 @@ export { default as GModal } from './components/GModal';
 export { default as GSelect } from './components/GSelect';
 export { default as GUpload } from './components/GUpload';
 
-// // hooks & tools
+// hooks
+export { default as useModal } from './hooks/useModal';
+export type { UseModal } from './hooks/useModal';
+
+// tools
 export { default as asyncPool } from './tools/asyncPool';
 export { default as tool1 } from './tools/tool1';
 // export { default as tool2 } from './hooks/tool2';
