@@ -10,7 +10,7 @@ export { default as GUpload } from './components/GUpload';
 
 // hooks
 export { default as useModal } from './hooks/useModal';
-export type { UseModal } from './hooks/useModal';
+export type { ContentRenderProps, UseModal } from './hooks/useModal';
 
 // tools
 export { default as asyncPool } from './tools/asyncPool';

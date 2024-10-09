@@ -1,7 +1,6 @@
 import { Form, FormInstance, Input } from 'antd';
-import { useModal } from 'gyc-components';
+import { ContentRenderProps, useModal } from 'gyc-components';
 import React, { useEffect, useState } from 'react';
-import { ContentRenderProps } from '..';
 
 interface UseDetailModalProps {
   onOkAfter?: () => void;
@@ -17,12 +16,10 @@ const DetailContent: React.FC<DetailContentProps> = ({
   modalProps,
 }) => {
   const init = async () => {
-    console.log('data', data, modalProps);
     form.setFieldsValue(data);
   };
 
   useEffect(() => {
-    console.log('useEffect', data, modalProps);
     if (modalProps.open) {
       init();
     }
@@ -60,7 +57,6 @@ const useDetailContentModal = ({ onOkAfter }: UseDetailModalProps) => {
       const data = await form.validateFields();
       onOkAfter?.();
       modal.close();
-      console.log('onOk', data);
     },
   });
 

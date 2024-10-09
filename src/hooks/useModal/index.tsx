@@ -49,14 +49,13 @@ const useModal: UseModal = ({ contentRender, ...rest }) => {
     },
   };
 
-  console.log('contentParams:', contentParams);
-
   const modalDom = (
     <Modal
       onCancel={() => {
         close();
       }}
       open={openState}
+      destroyOnClose
       {...rest}
       {...modalPropsState}
     >
