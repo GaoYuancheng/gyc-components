@@ -1,52 +1,73 @@
-import { Form, Modal, ModalProps } from 'antd';
-import React, { useEffect, useState } from 'react';
-import ReactDom from 'react-dom';
+import { Modal, ModalProps } from 'antd';
+import React, { useRef, useState } from 'react';
 
-export interface ContentRenderProps {
-  data: any;
-  modalProps: ModalProps;
-}
+type Content =
+  | ((modalOptions: ModalProps) => React.ReactNode)
+  | React.ReactNode;
 
-interface UseModalProps extends ModalProps {
-  contentRender: (params: ContentRenderProps) => React.ReactNode;
-}
+type UseModalProps = ModalProps & {
+  onOk?: (values: any) => void;
+  content?: Content;
+};
 
-type OmitModalPropsOpen = Omit<ModalProps, 'open'>;
-
-interface OpenProps extends OmitModalPropsOpen {
-  data?: any;
-}
-
+type Open = (
+  params?: Omit<ModalProps, 'open'> & {
+    content?: Content;
+  },
+) => void;
 interface UseModalReturn {
-  open: (params: OpenProps) => void;
+  open: Open;
   close: () => void;
   modalDom: React.ReactNode;
+  modalOptions: ModalProps;
 }
 
-export type UseModal = (props: UseModalProps) => UseModalReturn;
+export type UseModal = (props?: UseModalProps) => UseModalReturn;
 
-const useModal: UseModal = ({ contentRender, ...rest }) => {
-  const [openState, setOpenState] = useState(false);
-  const [data, setData] = useState(false);
-  const [modalPropsState, setModalPropsState] = useState<OmitModalPropsOpen>(
-    {},
-  );
+// 转换 content 放到 state 中
+const transformContent = (content: Content, params: any): React.ReactNode => {
+  if (typeof content === 'function') {
+    return content(params);
+  }
+  return content;
+};
 
-  const open = ({ data, ...rest }: OpenProps) => {
-    setOpenState(true);
-    setData(data);
-    setModalPropsState(rest);
+const useModal: UseModal = ({ content, ...rest } = {}) => {
+  const [modalOptions, setModalOptions] = useState<ModalProps>({
+    open: false,
+    ...rest,
+  });
+
+  const resContent = transformContent(content, modalOptions);
+  const initialContentRef = useRef(resContent);
+
+  const [modalContent, setModalContent] = useState<React.ReactNode>(resContent);
+
+  const open: Open = (openProps = {}) => {
+    const { content, ...options } = openProps;
+
+    const resModalOptions = {
+      ...modalOptions,
+      ...options,
+      open: true,
+    };
+
+    setModalOptions(resModalOptions);
+
+    // 处理 content 没传就使用默认值
+    const resContent = transformContent(
+      content || initialContentRef.current,
+      resModalOptions,
+    );
+
+    setModalContent(resContent);
   };
 
   const close = () => {
-    setOpenState(false);
-  };
-  const contentParams = {
-    data,
-    modalProps: {
-      ...rest,
-      open: openState,
-    },
+    setModalOptions({
+      ...modalOptions,
+      open: false,
+    });
   };
 
   const modalDom = (
@@ -54,16 +75,13 @@ const useModal: UseModal = ({ contentRender, ...rest }) => {
       onCancel={() => {
         close();
       }}
-      open={openState}
-      destroyOnClose
-      {...rest}
-      {...modalPropsState}
+      {...modalOptions}
     >
-      {contentRender(contentParams)}
+      {modalContent}
     </Modal>
   );
 
-  return { open, close, modalDom };
+  return { open, close, modalDom, modalOptions };
 };
 
 export default useModal;

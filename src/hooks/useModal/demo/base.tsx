@@ -1,92 +1,30 @@
-import { Form, FormInstance, Input } from 'antd';
-import { ContentRenderProps, useModal } from 'gyc-components';
-import React, { useEffect, useState } from 'react';
-
-interface UseDetailModalProps {
-  onOkAfter?: () => void;
-}
-
-interface DetailContentProps extends ContentRenderProps {
-  form: FormInstance;
-}
-
-const DetailContent: React.FC<DetailContentProps> = ({
-  data,
-  form,
-  modalProps,
-}) => {
-  const init = async () => {
-    form.setFieldsValue(data);
-  };
-
-  useEffect(() => {
-    if (modalProps.open) {
-      init();
-    }
-  }, [modalProps.open]);
-
-  return (
-    <Form
-      form={form}
-      labelCol={{
-        span: 4,
-      }}
-      wrapperCol={{
-        span: 20,
-      }}
-    >
-      <Form.Item label="id" name="id">
-        <Input />
-      </Form.Item>
-      <Form.Item label="content" name="content">
-        <Input />
-      </Form.Item>
-    </Form>
-  );
-};
-
-const useDetailContentModal = ({ onOkAfter }: UseDetailModalProps) => {
-  const [form] = Form.useForm();
-
-  const modal = useModal({
-    contentRender: ({ data, modalProps }) => (
-      <DetailContent data={data} form={form} modalProps={modalProps} />
-    ),
-    title: 'DetailContent',
-    onOk: async () => {
-      const data = await form.validateFields();
-      onOkAfter?.();
-      modal.close();
-    },
-  });
-
-  return modal;
-};
+import { useModal } from 'gyc-components';
+import React from 'react';
 
 const UseModalBase = () => {
-  const [count, setCount] = useState(0);
-  const { open, modalDom } = useDetailContentModal({
-    onOkAfter: () => {
-      setCount((prev) => prev + 1);
+  const { open, modalDom } = useModal({
+    destroyOnClose: true,
+    content: (modalProps) => {
+      return (
+        <div>
+          <div>我是初始弹窗</div>
+          <div>{JSON.stringify(modalProps)}</div>
+        </div>
+      );
     },
   });
 
   return (
     <div>
-      {count}
-      <div
+      <a
         onClick={() => {
           open({
-            data: {
-              id: 1,
-              content: 'content',
-            },
+            title: '弹窗属性',
           });
         }}
       >
-        UseModalBase
-      </div>
-
+        打开弹窗
+      </a>
       {modalDom}
     </div>
   );

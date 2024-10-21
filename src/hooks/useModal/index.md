@@ -15,6 +15,10 @@ group:
 
 <code src="./demo/base.tsx"></code>
 
+### 使用自定义的 content
+
+<code src="./demo/customContent.tsx" description="通过open方法传参使用不同的 content"></code>
+
 ### 使用不同的 options
 
 <code src="./demo/differentOptions.tsx" description="通过open方法传参使用不同的 options"></code>
