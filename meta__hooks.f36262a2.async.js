@@ -203,7 +203,7 @@ const EditModal: React.FC<EditModalProps> = ({ ...props }) => {
 const UseModalDifferentOptions = () => {
   const [content, setContent] = useState('');
 
-  const { open, close, modalDom } = useModal(EditModal, {
+  const editModal = useModal(EditModal, {
     onSuccess: (values) => {
       setContent(values.content);
       close();
@@ -216,7 +216,7 @@ const UseModalDifferentOptions = () => {
       <Space>
         <a
           onClick={() => {
-            open();
+            editModal.open();
           }}
         >
           \u65B0\u5EFA
@@ -227,7 +227,7 @@ const UseModalDifferentOptions = () => {
               content,
               id: 11,
             };
-            open({
+            editModal.open({
               data,
             });
           }}
@@ -236,7 +236,7 @@ const UseModalDifferentOptions = () => {
         </a>
       </Space>
 
-      {modalDom}
+      {editModal.modalDom}
     </div>
   );
 };
