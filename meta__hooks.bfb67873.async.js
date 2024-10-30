@@ -134,16 +134,8 @@ const useHook1 = () => {
 };
 
 export default useHook1;
-`},21001:function(y,o){o.Z=`import {
-  Form,
-  FormInstance,
-  Input,
-  message,
-  Modal,
-  ModalProps,
-  Space,
-} from 'antd';
-import { ContentRenderProps, useModal } from 'gyc-components';
+`},21001:function(y,o){o.Z=`import { Form, Input, Modal, ModalProps, Space } from 'antd';
+import { useModal } from 'gyc-components';
 import React, { useEffect, useState } from 'react';
 
 interface EditModalProps extends ModalProps {
