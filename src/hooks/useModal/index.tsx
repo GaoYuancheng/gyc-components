@@ -16,6 +16,7 @@ const useModal = <P extends React.ElementType>(
 
   // 默认配置
   const defaultModalOptions: ModalProps = {
+    // 兼容visible
     open: false,
     visible: false,
     onCancel: () => {

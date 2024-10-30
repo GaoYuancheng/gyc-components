@@ -9,6 +9,10 @@ group:
 - uniapp 移动端单行展示组件
 - 自动识别内容是否省略，省略了就使用 u-modal 展示.
 
+示例图片
+
+<img src="./assets/baseDemo.gif" height="400px"></img>
+
 :::code-group
 
 ```vue | pure [示例]
@@ -219,6 +223,7 @@ const lineClick = () => {
 
 <style lang="scss" scoped>
 .infoLine {
+  text-overflow: ellipsis;
   box-sizing: border-box;
   display: flex;
   width: 100%;

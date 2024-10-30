@@ -11,7 +11,8 @@ group:
 - 自带下拉分页 下拉刷新
 - 支持自定义渲染展示区域.
 
-![示例1](./assets/demo-with-u-card.png =430\*932)
+<!-- ![示例1](./assets/demo-with-u-card.png =430\*932) -->
+<img src="./assets/demo-with-u-card.png" height="400px">
 
 :::code-group
 

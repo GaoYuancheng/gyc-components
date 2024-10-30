@@ -10,6 +10,7 @@ const pathPrefix = NODE_ENV === 'production' ? '/gyc-components/' : '/';
 export default defineConfig({
   outputPath: 'docs-dist',
   publicPath: `${pathPrefix}`,
+  base: `${pathPrefix}`,
   resolve: {
     atomDirs: [
       { type: 'components', dir: 'src/components' },
