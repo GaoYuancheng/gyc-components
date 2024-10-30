@@ -38,7 +38,12 @@ const EditModal: React.FC<EditModalProps> = ({ ...props }) => {
   };
 
   return (
-    <Modal onOk={onOk} title={isEdit ? '编辑' : '新建'} {...props}>
+    <Modal
+      afterClose={() => form.resetFields()}
+      onOk={onOk}
+      title={isEdit ? '编辑' : '新建'}
+      {...props}
+    >
       <Form
         form={form}
         labelCol={{
@@ -62,7 +67,7 @@ const UseModalDifferentOptions = () => {
   const editModal = useModal(EditModal, {
     onSuccess: (values) => {
       setContent(values.content);
-      close();
+      editModal.close();
     },
   });
 
