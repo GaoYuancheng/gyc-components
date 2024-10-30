@@ -1,13 +1,5 @@
-import {
-  Form,
-  FormInstance,
-  Input,
-  message,
-  Modal,
-  ModalProps,
-  Space,
-} from 'antd';
-import { ContentRenderProps, useModal } from 'gyc-components';
+import { Form, Input, Modal, ModalProps, Space } from 'antd';
+import { useModal } from 'gyc-components';
 import React, { useEffect, useState } from 'react';
 
 interface EditModalProps extends ModalProps {
