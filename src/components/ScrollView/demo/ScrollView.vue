@@ -15,6 +15,7 @@
       <slot :item="item">无内容</slot>
       <!-- 只能放里面 放外面布局会有问题 -->
       <u-loadmore
+        @click="scrolltolower"
         v-if="index === list.length - 1"
         :status="status"
         :marginTop="16"
@@ -24,7 +25,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref, watch, watchEffect } from 'vue';
+import { onMounted, ref, watch, defineExpose } from 'vue';
 const props = defineProps({
   height: {
     type: String,
@@ -74,7 +75,7 @@ const pageInfo = ref({
 
 const loading = status.value === 'loading';
 
-const getList = async (pageNum) => {
+const getList = async (pageNum = pageInfo.value.pageNum) => {
   uni.showLoading({
     title: '加载中...',
   });
@@ -134,6 +135,11 @@ watch(
     deep: true,
   },
 );
+
+defineExpose({
+  refresh: () => getList(1),
+  getList,
+});
 </script>
 
 <style lang="scss" scoped>

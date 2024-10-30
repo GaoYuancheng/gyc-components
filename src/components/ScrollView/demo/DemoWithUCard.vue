@@ -8,6 +8,7 @@
       ></u-search>
     </div>
     <ScrollView
+      ref="scrollViewRef"
       :params="filter"
       :request="getData"
       v-slot="slotProps"
@@ -27,6 +28,12 @@
             </div>
           </div>
         </template>
+
+        <template #foot>
+          <div class="footer">
+            <div class="refreshBtn" @click="deleteItem">点击后刷新列表</div>
+          </div>
+        </template>
       </u-card>
     </ScrollView>
   </u-page>
@@ -35,6 +42,8 @@
 <script setup>
 import ScrollView from '@/components/ScrollView';
 import { ref } from 'vue';
+
+const scrollViewRef = ref();
 
 const mockData = {
   success: true,
@@ -205,12 +214,16 @@ const cardItemInfoList = [
 ];
 
 const filter = ref({});
+
+const deleteItem = () => {
+  scrollViewRef.value.refresh();
+};
+
 const search = (value) => {
   filter.value.search = value;
 };
 
 const getData = async ({ pageNum, pageSize }, params) => {
-  console.log('getData', pageNum, pageSize, params);
   const res = mockData;
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -260,6 +273,13 @@ const getData = async ({ pageNum, pageSize }, params) => {
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+        }
+      }
+
+      .footer {
+        text-align: right;
+        .refreshBtn {
+          color: red;
         }
       }
     }
