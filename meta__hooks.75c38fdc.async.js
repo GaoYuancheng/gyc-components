@@ -174,7 +174,12 @@ const EditModal: React.FC<EditModalProps> = ({ ...props }) => {
   };
 
   return (
-    <Modal onOk={onOk} title={isEdit ? '\u7F16\u8F91' : '\u65B0\u5EFA'} {...props}>
+    <Modal
+      afterClose={() => form.resetFields()}
+      onOk={onOk}
+      title={isEdit ? '\u7F16\u8F91' : '\u65B0\u5EFA'}
+      {...props}
+    >
       <Form
         form={form}
         labelCol={{
@@ -198,7 +203,7 @@ const UseModalDifferentOptions = () => {
   const editModal = useModal(EditModal, {
     onSuccess: (values) => {
       setContent(values.content);
-      close();
+      editModal.close();
     },
   });
 
