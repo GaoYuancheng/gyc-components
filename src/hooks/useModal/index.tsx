@@ -1,5 +1,5 @@
 import { Modal, ModalProps } from 'antd';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const useModal = <P extends React.ElementType>(
   ModalComponent: P,
@@ -28,8 +28,6 @@ const useModal = <P extends React.ElementType>(
   const [modalOptions, setModalOptions] =
     useState<ModalProps>(defaultModalOptions);
 
-  const initialModalOptionsRef = useRef(defaultModalOptions);
-
   const close = () => {
     setModalOptions({
       ...modalOptions,
@@ -37,11 +35,13 @@ const useModal = <P extends React.ElementType>(
       visible: false,
     });
   };
+
   const modalDom = React.createElement(ModalComponent, modalOptions);
 
   const open: UseModalReturn['open'] = (openParams = {}) => {
     setModalOptions({
-      ...initialModalOptionsRef.current,
+      ...modalOptions,
+      ...modalProps,
       ...openParams,
       open: true,
       visible: true,

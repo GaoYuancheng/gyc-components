@@ -15,6 +15,8 @@ group:
 
 ### 基础用法
 
+打开弹窗 并且在 onOk 时获取 state 状态
+
 <code src="./demo/base.tsx"></code>
 
 ### 使用不同的 options 及 data
