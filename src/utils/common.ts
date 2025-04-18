@@ -9,7 +9,3 @@ export const isString = (value: unknown): value is string =>
 
 export const isFunction = (value: unknown): value is (...args: any) => any =>
   typeof value === 'function';
-
-// export const isString1 = (value: any): boolean => typeof value === 'string';
-
-// const foo = (val: unknown) => (isString(val) ? val.toUpperCase() : val);

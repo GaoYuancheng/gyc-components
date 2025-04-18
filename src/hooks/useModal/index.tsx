@@ -1,5 +1,5 @@
 import { Modal, ModalProps } from 'antd';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 const useModal = <P extends React.ElementType>(
   ModalComponent: P,
@@ -36,7 +36,10 @@ const useModal = <P extends React.ElementType>(
     });
   };
 
-  const modalDom = React.createElement(ModalComponent, modalOptions);
+  const modalDom = useMemo(
+    () => React.createElement(ModalComponent, modalOptions),
+    [modalOptions.visible, modalOptions.open],
+  );
 
   const open: UseModalReturn['open'] = (openParams = {}) => {
     setModalOptions({

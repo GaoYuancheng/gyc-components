@@ -74,5 +74,5 @@ export default defineConfig({
       targets: [outDir],
     }),
   ],
-  external: ['react', 'react-dom', 'antd'],
+  external: ['react', 'react-dom', 'antd', 'echarts'],
 });

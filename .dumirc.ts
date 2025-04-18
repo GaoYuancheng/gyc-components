@@ -1,4 +1,5 @@
 import { defineConfig } from 'dumi';
+import path from 'path';
 
 const { NODE_ENV } = process.env;
 //development
@@ -11,6 +12,7 @@ export default defineConfig({
   outputPath: 'docs-dist',
   publicPath: `${pathPrefix}`,
   base: `${pathPrefix}`,
+  alias: {},
   resolve: {
     atomDirs: [
       { type: 'components', dir: 'src/components' },

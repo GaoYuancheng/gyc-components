@@ -1,4 +1,4 @@
-import { Form, Input, Modal, ModalProps, Space } from 'antd';
+import { Form, Input, message, Modal, ModalProps, Space } from 'antd';
 import { useModal } from 'gyc-components';
 import React, { useEffect, useState } from 'react';
 
@@ -7,8 +7,8 @@ interface EditModalProps extends ModalProps {
   onSuccess: (values: any) => void;
 }
 
-const EditModal: React.FC<EditModalProps> = ({ ...props }) => {
-  const { data, open, onSuccess } = props;
+const EditModal: React.FC<EditModalProps> = ({ data, onSuccess, ...rest }) => {
+  const { open } = rest;
 
   const isEdit = data?.id;
 
@@ -34,6 +34,7 @@ const EditModal: React.FC<EditModalProps> = ({ ...props }) => {
       // 新建
       console.log('新建', values);
     }
+    message.success('操作成功');
     onSuccess(values);
   };
 
@@ -42,7 +43,7 @@ const EditModal: React.FC<EditModalProps> = ({ ...props }) => {
       afterClose={() => form.resetFields()}
       onOk={onOk}
       title={isEdit ? '编辑' : '新建'}
-      {...props}
+      {...rest}
     >
       <Form
         form={form}
