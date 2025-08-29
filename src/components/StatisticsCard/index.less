@@ -1,0 +1,58 @@
+.statisticsCard {
+  display: flex;
+
+  .item {
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    padding: 16px;
+    align-items: center;
+
+    .itemContent {
+      .itemLabel {
+        font-size: 16px;
+        color: rgba(0, 0, 0, 65%);
+      }
+
+      .itemValue {
+        font-size: 24px;
+        color: rgba(0, 0, 0, 85%);
+      }
+
+      .itemUnit {
+        font-size: 16px;
+        margin-left: 4px;
+        color: rgba(0, 0, 0, 65%);
+      }
+    }
+  }
+
+  .left {
+    width: 160px;
+    margin-right: 16px;
+
+    .item {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+
+      img {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  .right {
+    flex: 1;
+
+    .item {
+      display: flex;
+
+      img {
+        margin-right: 16px;
+        vertical-align: middle;
+      }
+    }
+  }
+}

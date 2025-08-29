@@ -1,5 +1,7 @@
 ---
 title: FileList # 组件的标题，会在菜单侧边栏展示
+group: # 分组
+  title: 数据展示 # 所在分组的名称
 demo:
   cols: 2
 ---

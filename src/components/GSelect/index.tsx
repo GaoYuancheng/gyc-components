@@ -2,7 +2,7 @@ import { Select } from 'antd';
 import React from 'react';
 import './index.less';
 
-const GSelect = () => {
+const GSelect: React.FC<any> = () => {
   return (
     <Select className="gselect">
       <Select.Option value={1}>1</Select.Option>
