@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgyc_components=self.webpackChunkgyc_components||[]).push([[2125],{25225:function(c,t,n){n.r(t);var o=n(50959),s=n(93795),e=n(11527),u=function(){return(0,o.useEffect)(function(){(0,s.default)()},[]),(0,e.jsx)("div",{children:"tool1base"})};t.default=u}}]);

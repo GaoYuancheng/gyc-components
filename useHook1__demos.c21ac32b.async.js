@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgyc_components=self.webpackChunkgyc_components||[]).push([[2529],{88214:function(u,e,s){s.r(e);var _=s(50959),n=s(11982),t=s(11527),o=function(){var a=(0,n.default)(),E=a.state;return(0,t.jsx)("div",{children:"UseHook1Base"})};e.default=o}}]);
