@@ -73,6 +73,7 @@ export const getCommonPieOptions = (data: PieData): EChartsOption => {
   const total = data.reduce((prev, item) => {
     return prev + item.value;
   }, 0);
+
   return {
     tooltip: {
       trigger: 'item',
@@ -126,3 +127,36 @@ export const getCommonPieOptions = (data: PieData): EChartsOption => {
     },
   };
 };
+
+export const commonDataZoom = [
+  {
+    type: 'slider',
+    xAxisIndex: 0,
+    filterMode: 'filter',
+    startValue: 0,
+    endValue: 4,
+    backgroundColor: 'transparent',
+    borderColor: 'transparent',
+    dataBackground: {
+      lineStyle: {
+        color: 'transparent',
+      },
+      areaStyle: {
+        color: 'transparent',
+      },
+    },
+    height: 10,
+    width: '92%',
+    left: 30,
+    bottom: 0,
+    fillerColor: '#eee',
+    handleStyle: {
+      borderWidth: 0,
+      color: '#eee',
+    },
+    handleSize: '85%',
+    brushSelect: false,
+    handleIcon: ',512m-448,0a448,448,0,1,0,896,0a448,448,0,1,0,-896,0Z',
+    zoomLock: true,
+  },
+];

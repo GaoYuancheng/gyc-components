@@ -6,10 +6,10 @@ export const sleep = (time: number) => {
   });
 };
 
-export const mockRequest = async <T extends any>(
-  params: any,
-  resData: T,
+export const mockRequest = async <T = undefined>(
+  params?: any,
+  resData?: T,
 ): Promise<T> => {
   await sleep(1000);
-  return structuredClone(resData);
+  return structuredClone(resData) as T;
 };
