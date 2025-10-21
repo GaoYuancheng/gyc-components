@@ -12,7 +12,7 @@ const request = (time: number) => {
 
 // 使用方法
 
-const Tool1base = () => {
+const AsyncPool = () => {
   const [res1, setRes1] = React.useState<any>([]);
   const [res2, setRes2] = React.useState<any>([]);
   const [res3, setRes3] = React.useState<any>([]);
@@ -41,4 +41,4 @@ const Tool1base = () => {
   );
 };
 
-export default Tool1base;
+export default AsyncPool;
