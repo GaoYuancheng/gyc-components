@@ -4,6 +4,8 @@ export { default as BaseECharts } from './components/BaseECharts';
 export { default as ClickWrap } from './components/ClickWrap';
 export * from './components/ColorPicker';
 export { default as ColorPicker } from './components/ColorPicker';
+export * from './components/EllipsisText';
+export { default as EllipsisText } from './components/EllipsisText';
 export * from './components/FileList';
 export { default as FileList } from './components/FileList';
 export { default as Foo } from './components/Foo';
