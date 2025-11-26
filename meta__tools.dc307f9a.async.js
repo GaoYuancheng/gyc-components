@@ -1,4 +1,81 @@
-"use strict";(self.webpackChunkgyc_components=self.webpackChunkgyc_components||[]).push([[8024],{4863:function(s,e,n){n.r(e),n.d(e,{demos:function(){return c}});var t=n(13448),a=n.n(t),d=n(74815),i=n.n(d),r=n(50959),c={"src-tools-async-pool-demo-base":{component:r.memo(r.lazy(function(){return n.e(2433).then(n.bind(n,88679))})),asset:{type:"BLOCK",id:"src-tools-async-pool-demo-base",refAtomIds:[],dependencies:{"index.tsx":{type:"FILE",value:n(92086).Z},"gyc-components":{type:"NPM",value:"0.0.1"},react:{type:"NPM",value:"18.2.0"}},entry:"index.tsx",title:"\u57FA\u7840\u7528\u6CD5"},context:{"gyc-components":n(14179),react:n(50959)},renderOpts:{compile:function(){var u=i()(a()().mark(function p(){var l,f=arguments;return a()().wrap(function(o){for(;;)switch(o.prev=o.next){case 0:return o.next=2,n.e(648).then(n.bind(n,90648));case 2:return o.abrupt("return",(l=o.sent).default.apply(l,f));case 3:case"end":return o.stop()}},p)}));function m(){return u.apply(this,arguments)}return m}()}}}},5149:function(s,e,n){n.r(e),n.d(e,{demos:function(){return a}});var t=n(50959),a={}},6177:function(s,e,n){n.r(e),n.d(e,{demos:function(){return a}});var t=n(50959),a={}},14782:function(s,e,n){n.r(e),n.d(e,{demos:function(){return c}});var t=n(13448),a=n.n(t),d=n(74815),i=n.n(d),r=n(50959),c={"tool1-demo-base":{component:r.memo(r.lazy(function(){return n.e(2125).then(n.bind(n,25225))})),asset:{type:"BLOCK",id:"tool1-demo-base",refAtomIds:["tool1"],dependencies:{"index.tsx":{type:"FILE",value:n(55261).Z},react:{type:"NPM",value:"18.2.0"},"../index.tsx":{type:"FILE",value:n(69468).Z}},entry:"index.tsx",title:"\u57FA\u7840\u7528\u6CD5"},context:{react:n(50959),"../index.tsx":n(93795)},renderOpts:{compile:function(){var u=i()(a()().mark(function p(){var l,f=arguments;return a()().wrap(function(o){for(;;)switch(o.prev=o.next){case 0:return o.next=2,n.e(648).then(n.bind(n,90648));case 2:return o.abrupt("return",(l=o.sent).default.apply(l,f));case 3:case"end":return o.stop()}},p)}));function m(){return u.apply(this,arguments)}return m}()}}}},73135:function(s,e,n){n.r(e),n.d(e,{texts:function(){return t}});const t=[{value:"\u9650\u5236\u8BF7\u6C42\u5E76\u53D1",paraId:0,tocIndex:0},{value:"\u53C2\u6570",paraId:1},{value:"\u8BF4\u660E",paraId:1},{value:"\u7C7B\u578B",paraId:1},{value:"\u9ED8\u8BA4\u503C",paraId:1},{value:"promiseList",paraId:1},{value:"\u5FC5\u4F20\uFF0C\u5F02\u6B65\u8BF7\u6C42\u6570\u7EC4",paraId:1},{value:"(() => Promise",paraId:1},{value:")[]",paraId:1},{value:"-",paraId:1},{value:"limit",paraId:1},{value:"\u5FC5\u4F20\uFF0C\u6700\u5927\u5E76\u53D1\u6570",paraId:1},{value:"number",paraId:1},{value:"-",paraId:1}]},50661:function(s,e,n){n.r(e),n.d(e,{texts:function(){return t}});const t=[{value:"\u628A npm \u5305\u4E0A\u4F20\u5230 nexus npm \u4ED3\u5E93",paraId:0,tocIndex:0},{value:`\u{1F4E6}nexus-npm
+"use strict";(self.webpackChunkgyc_components=self.webpackChunkgyc_components||[]).push([[8024],{4863:function(s,e,n){n.r(e),n.d(e,{demos:function(){return c}});var t=n(13448),r=n.n(t),d=n(74815),i=n.n(d),a=n(50959),c={"src-tools-async-pool-demo-base":{component:a.memo(a.lazy(function(){return n.e(2433).then(n.bind(n,88679))})),asset:{type:"BLOCK",id:"src-tools-async-pool-demo-base",refAtomIds:[],dependencies:{"index.tsx":{type:"FILE",value:n(92086).Z},"gyc-components":{type:"NPM",value:"0.0.1"},react:{type:"NPM",value:"18.2.0"}},entry:"index.tsx",title:"\u57FA\u7840\u7528\u6CD5"},context:{"gyc-components":n(14179),react:n(50959)},renderOpts:{compile:function(){var u=i()(r()().mark(function f(){var l,p=arguments;return r()().wrap(function(o){for(;;)switch(o.prev=o.next){case 0:return o.next=2,n.e(648).then(n.bind(n,90648));case 2:return o.abrupt("return",(l=o.sent).default.apply(l,p));case 3:case"end":return o.stop()}},f)}));function m(){return u.apply(this,arguments)}return m}()}}}},10519:function(s,e,n){n.r(e),n.d(e,{demos:function(){return r}});var t=n(50959),r={}},5149:function(s,e,n){n.r(e),n.d(e,{demos:function(){return r}});var t=n(50959),r={}},6177:function(s,e,n){n.r(e),n.d(e,{demos:function(){return r}});var t=n(50959),r={}},14782:function(s,e,n){n.r(e),n.d(e,{demos:function(){return c}});var t=n(13448),r=n.n(t),d=n(74815),i=n.n(d),a=n(50959),c={"tool1-demo-base":{component:a.memo(a.lazy(function(){return n.e(2125).then(n.bind(n,25225))})),asset:{type:"BLOCK",id:"tool1-demo-base",refAtomIds:["tool1"],dependencies:{"index.tsx":{type:"FILE",value:n(55261).Z},react:{type:"NPM",value:"18.2.0"},"../index.tsx":{type:"FILE",value:n(69468).Z}},entry:"index.tsx",title:"\u57FA\u7840\u7528\u6CD5"},context:{react:n(50959),"../index.tsx":n(93795)},renderOpts:{compile:function(){var u=i()(r()().mark(function f(){var l,p=arguments;return r()().wrap(function(o){for(;;)switch(o.prev=o.next){case 0:return o.next=2,n.e(648).then(n.bind(n,90648));case 2:return o.abrupt("return",(l=o.sent).default.apply(l,p));case 3:case"end":return o.stop()}},f)}));function m(){return u.apply(this,arguments)}return m}()}}}},73135:function(s,e,n){n.r(e),n.d(e,{texts:function(){return t}});const t=[{value:"\u9650\u5236\u8BF7\u6C42\u5E76\u53D1",paraId:0,tocIndex:0},{value:"\u53C2\u6570",paraId:1},{value:"\u8BF4\u660E",paraId:1},{value:"\u7C7B\u578B",paraId:1},{value:"\u9ED8\u8BA4\u503C",paraId:1},{value:"promiseList",paraId:1},{value:"\u5FC5\u4F20\uFF0C\u5F02\u6B65\u8BF7\u6C42\u6570\u7EC4",paraId:1},{value:"(() => Promise",paraId:1},{value:")[]",paraId:1},{value:"-",paraId:1},{value:"limit",paraId:1},{value:"\u5FC5\u4F20\uFF0C\u6700\u5927\u5E76\u53D1\u6570",paraId:1},{value:"number",paraId:1},{value:"-",paraId:1}]},75974:function(s,e,n){n.r(e),n.d(e,{texts:function(){return t}});const t=[{value:`// 1. \u83B7\u53D6\u5F53\u524D\u76EE\u5F55\u7684 \u6587\u4EF6\u5217\u8868 \u6839\u636E git log \u83B7\u53D6\u6700\u8FD1\u4E00\u5E74\u5185\u4FEE\u6539\u7684\u6587\u4EF6
+const fs = require('fs');
+const path = require('path');
+
+// \u4F7F\u7528\u793A\u4F8B:
+// \u8BF7\u5C06\u4E0B\u9762\u7684\u8DEF\u5F84\u66FF\u6362\u4E3A\u60A8\u8981\u6E05\u7406\u7684\u5B9E\u9645\u8DEF\u5F84
+const targetDir = 'D:/git-repo-w/\u4E09\u5C40'; // \u53EF\u4EE5\u901A\u8FC7\u547D\u4EE4\u884C\u53C2\u6570\u4F20\u5165\u8DEF\u5F84\uFF0C\u9ED8\u8BA4\u4E3A\u5F53\u524D\u76EE\u5F55
+
+/**
+ * \u9012\u5F52\u5220\u9664\u6307\u5B9A\u76EE\u5F55\u4E0B\u6240\u6709\u540D\u4E3Anode_modules\u7684\u6587\u4EF6\u5939
+ * @param {string} dir - \u8981\u641C\u7D22\u7684\u6839\u76EE\u5F55\u8DEF\u5F84
+ */
+function deleteNodeModulesFolders(dir) {
+  // \u68C0\u67E5\u8DEF\u5F84\u6709\u6548\u6027
+  if (!fs.existsSync(dir)) {
+    console.error(\`\u9519\u8BEF: \u8DEF\u5F84 "\${dir}" \u4E0D\u5B58\u5728\`);
+    return;
+  }
+
+  if (!fs.statSync(dir).isDirectory()) {
+    console.error(\`\u9519\u8BEF: "\${dir}" \u4E0D\u662F\u4E00\u4E2A\u6709\u6548\u7684\u76EE\u5F55\`);
+    return;
+  }
+
+  try {
+    // \u8BFB\u53D6\u76EE\u5F55\u5185\u5BB9
+    const items = fs.readdirSync(dir);
+
+    items.forEach((item) => {
+      const itemPath = path.join(dir, item);
+
+      // \u68C0\u67E5\u662F\u5426\u4E3Anode_modules\u6587\u4EF6\u5939
+      if (item === 'node_modules' && fs.statSync(itemPath).isDirectory()) {
+        console.log(\`\u6B63\u5728\u5220\u9664: \${itemPath}\`);
+        deleteFolderRecursive(itemPath);
+        console.log(\`\u5DF2\u5220\u9664: \${itemPath}\`);
+      }
+      // \u5982\u679C\u662F\u76EE\u5F55\uFF0C\u5219\u9012\u5F52\u5904\u7406
+      else if (fs.statSync(itemPath).isDirectory()) {
+        deleteNodeModulesFolders(itemPath);
+      }
+    });
+  } catch (error) {
+    console.error(\`\u5904\u7406\u76EE\u5F55 "\${dir}" \u65F6\u51FA\u9519:\`, error.message);
+  }
+}
+
+/**
+ * \u9012\u5F52\u5220\u9664\u6587\u4EF6\u5939\u53CA\u5176\u5185\u5BB9
+ * @param {string} folderPath - \u8981\u5220\u9664\u7684\u6587\u4EF6\u5939\u8DEF\u5F84
+ */
+function deleteFolderRecursive(folderPath) {
+  if (!fs.existsSync(folderPath)) {
+    return;
+  }
+
+  const items = fs.readdirSync(folderPath);
+
+  items.forEach((item) => {
+    const itemPath = path.join(folderPath, item);
+
+    if (fs.statSync(itemPath).isDirectory()) {
+      deleteFolderRecursive(itemPath);
+    } else {
+      fs.unlinkSync(itemPath);
+    }
+  });
+
+  // \u5220\u9664\u7A7A\u6587\u4EF6\u5939
+  fs.rmdirSync(folderPath);
+}
+
+console.log(
+  \`\u5F00\u59CB\u641C\u7D22\u5E76\u5220\u9664 "\${targetDir}" \u76EE\u5F55\u4E0B\u7684\u6240\u6709 node_modules \u6587\u4EF6\u5939...\`,
+);
+deleteNodeModulesFolders(targetDir);
+console.log('\u64CD\u4F5C\u5B8C\u6210!');
+`,paraId:0,tocIndex:1}]},50661:function(s,e,n){n.r(e),n.d(e,{texts:function(){return t}});const t=[{value:"\u628A npm \u5305\u4E0A\u4F20\u5230 nexus npm \u4ED3\u5E93",paraId:0,tocIndex:0},{value:`\u{1F4E6}nexus-npm
 \u2523 \u{1F4C2}scripts
 \u2503 \u2517 \u{1F4DC}downloadAndUploadToNexus.sh
 \u2523 \u{1F4DC}package-lock.json
