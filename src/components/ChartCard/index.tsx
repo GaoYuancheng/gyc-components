@@ -6,7 +6,7 @@ import FormCard, { FormCardProps } from '../FormCard';
 interface ChartCardProps
   extends Omit<FormCardProps, 'childrenRender' | 'request'> {
   request: (
-    ...args: Parameters<FormCardProps['request']>
+    ...args: Parameters<NonNullable<FormCardProps['request']>>
   ) => Promise<EChartsOption>;
 }
 

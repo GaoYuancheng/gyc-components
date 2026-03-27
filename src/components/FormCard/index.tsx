@@ -3,18 +3,16 @@ import { Button, Card, CardProps, Form } from 'antd';
 import { FormItemProps } from 'antd/es/form';
 import React from 'react';
 
-type GetPromiseReturnType<T extends (...args: any[]) => Promise<any>> =
-  T extends (...args: any[]) => Promise<infer R> ? R : unknown;
+type GetPromiseReturnType<
+  T extends ((...args: any[]) => Promise<any>) | undefined,
+> = T extends (...args: any[]) => Promise<infer R> ? R : unknown;
 
 export interface FormCardProps extends CardProps {
   params?: Record<string, any>;
-  formItems?: {
-    label?: string;
-    name: string;
+  formItems?: ({
     children: React.ReactNode;
-    formItemProps?: FormItemProps;
-  }[];
-  request: (
+  } & FormItemProps)[];
+  request?: (
     params: FormCardProps['params'] & Record<string, any>,
   ) => Promise<any>;
   childrenRender: (
@@ -42,11 +40,11 @@ const FormCard: React.FC<FormCardProps> = ({
 
     const requestParams = {
       // 表单值优先
-      ...values,
       ...params,
+      ...values,
     };
 
-    const res = await request(requestParams);
+    const res = await request?.(requestParams);
     return res;
   };
 
@@ -59,10 +57,11 @@ const FormCard: React.FC<FormCardProps> = ({
       layout="inline"
     >
       {formItems.map((item) => {
-        const { formItemProps = {}, name, label } = item;
+        const { children, ...restFormItemProps } = item;
+        const { name } = restFormItemProps;
         return (
-          <Form.Item key={name} name={name} label={label} {...formItemProps}>
-            {item.children}
+          <Form.Item key={name} {...restFormItemProps}>
+            {children}
           </Form.Item>
         );
       })}
@@ -79,11 +78,11 @@ const FormCard: React.FC<FormCardProps> = ({
 
   return (
     <Card
-      bodyStyle={{
-        height: 250,
-      }}
       loading={loading}
       extra={cardExtra}
+      headStyle={{
+        height: 64,
+      }}
       {...rest}
     >
       {childrenRender(data)}

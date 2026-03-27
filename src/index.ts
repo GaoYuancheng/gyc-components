@@ -38,3 +38,6 @@ export { default as asyncPool } from './tools/asyncPool';
 export { default as tool1 } from './tools/tool1';
 // export { default as tool2 } from './hooks/tool2';
 // export { default as useHooks1 } from './hooks/useHook1';
+
+// utils
+export { mockRequest } from './utils/request';
